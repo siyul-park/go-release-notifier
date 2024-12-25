@@ -1,0 +1,24 @@
+name: 'Notify pkg.go.dev on Release'
+description: 'Notifies pkg.go.dev with release updates from GitHub.'
+author: 'siyul-park'
+inputs:
+  repository:
+    description: 'The GitHub repository (owner/repo)'
+    required: false
+    default: ${{ github.repository }}
+  release_tag:
+    description: 'The release tag name'
+    required: false
+    default: ${{ github.event.release.tag_name }}
+  base_url:
+    description: 'The base URL for pkg.go.dev'
+    required: false
+    default: 'https://pkg.go.dev/fetch'
+
+runs:
+  using: 'bash'
+  main: 'entrypoint.sh'
+
+branding:
+  color: 'blue'
+  icon: 'package'
