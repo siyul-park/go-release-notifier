@@ -35,9 +35,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Notify pkg.go.dev with release update
         uses: siyul-park/notify-pkg-go-dev@v1
 ```
